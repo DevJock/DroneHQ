@@ -4,9 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DroneHQ"
+        xmlns:StreamPlayerControl="clr-namespace:WebEye.Controls.Wpf.StreamPlayerControl;assembly=WebEye.Controls.Wpf.StreamPlayerControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        ResizeMode="NoResize"
+        Title="DroneHQ | Designed By Chiraag Bangera" Height="800" Width="1280">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="900"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="96"/>
+        </Grid.RowDefinitions>
+        <StreamPlayerControl:StreamPlayerControl x:Name="player" Grid.Column="0" Grid.RowSpan="8" Loaded="StreamPlayerControl_Loaded" Background="Black"/>
+        <Button x:Name="connect" Content="Connect" FontSize="38" FontWeight="Bold" Grid.Column="1" Grid.Row="7" Margin="15" Click="connect_Click"/>
+        <Label x:Name="sensi" Content="Sensitivity: 0" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+        <Label x:Name="altitude" Content="Altitude: 0m" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        <Label x:Name="speed" Content="Speed: 0m/s" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+        <Label x:Name="batteryV" Content="Voltage: 0mV" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+        <Label x:Name="disturbance" Content="Attenuation: 0dB" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
+        <Label x:Name="wifi" Content="WiFi: 0dB" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5"/>
+        <Label x:Name="batpercent" Content="Battery: 0%" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6"/>
     </Grid>
 </Window>
